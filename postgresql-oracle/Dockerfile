@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends alien libaio1 build-essential postgresql-server-dev-14
 
 # 添加 Oracle 19c 客户端 rpm 包
-ADD oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm /opt/oracle/
+ADD ./oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm /opt/oracle/
 
 # 通过 alien 工具把 rpm 包转化为 deb 包并安装
 RUN alien -i --scripts /opt/oracle/oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm
