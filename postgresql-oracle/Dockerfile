@@ -2,8 +2,8 @@
 FROM docker.io/bitnami/postgresql:14.10.0
 
 # 安装依赖
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends alien libaio1 build-essential postgresql-server-dev-14 wget
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends alien libaio1 build-essential postgresql-server-dev-14 wget
 
 # 使用 wget 从网络下载 Oracle 19c 客户端 rpm 包并使用 alien 安装
 RUN wget -P /opt/oracle/ https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm && \
